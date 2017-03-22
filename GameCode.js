@@ -1,47 +1,46 @@
+
+
+
+
+
 // JavaScript source code
 
-var presentNumb = randomNumb;
+var firstNumber = [];
+var previousNumber = [];
 
 
 
-
+firstNumber = 1
 function rng() {
-    var randomNumb = Math.floor(Math.random()* 10) + 1;
-
-
+  
+    var randomNumb = Math.floor(Math.random() * 10) + 1;
+    previousNumber.push(randomNumb);
+    console.log(previousNumber);
     document.getElementById("rn").innerHTML = randomNumb;
 };
 
 
 
-var randomArray = [];
-var randomSum = 0;
-randomArray.push(rng());
-randomArray.push(rng());
-randomArray.push(rng());
-
-for (var i = 0; i < randomArray.lenth; i++) {
-    randomSum += randomArray[i];
-}
-
-
 function higher() {
-    var nextNumb = randomArray;
-
-    if (nextNumb > presentNumb) {
+    if (rng < previousNumber) {
         document.getElementById("wintext").innerHTML = "You win!";
-    } else 
-    {
+    } else {
         document.getElementById("wintext").innerHTML = "You lose!";
+
     }
-    
-    rng();
-  
-}
+};
+function lower() {
+    if (rng < previousNumber) {
+        document.getElementById("wintext").innerHTML = "You win!";
+    } else {
+        document.getElementById("wintext").innerHTML = "You lose";
+
+    }
+};
 
 
+document.getElementById("butt3").onclick = rng();
+higher();
+document.getElementById("butt4").onclick = rng();
+lower();
 
-
-
-
-document.getElementById("butt2").onclick = rng();
